@@ -2,18 +2,18 @@
   "name": "ZcybSec",
   "short_name": "ZcybSec",
   "description": "Personal portfolio for Zaid Hijazi",
-  "start_url": "/",
+  "start_url": "/test_pwa/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "assets/img/apple-touch-icon.png",
+      "src": "/test_pwa/assets/img/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "assets/img/favicon.png",
+      "src": "/test_pwa/assets/img/favicon.png",
       "sizes": "32x32",
       "type": "image/png"
     }
