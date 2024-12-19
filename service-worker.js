@@ -1,7 +1,7 @@
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open('Blog - ZaidHijazi').then((cache) => {
-            const filesToCache = [
+        caches.open('Blog - Zaid Hijazi').then((cache) => {
+            return cache.addAll([
                 // ملفات HTML
                 '/test_pwa/',
                 '/test_pwa/index.html',
@@ -39,14 +39,12 @@ self.addEventListener('install', (event) => {
                 '/test_pwa/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2',
         
                 // ملفات مكتبات الطرف الثالث
-                '/test_pwa/assets/vendor/aos/aos.css',
                 '/test_pwa/assets/vendor/bootstrap/css/bootstrap.min.css',
                 '/test_pwa/assets/vendor/bootstrap-icons/bootstrap-icons.css',
                 '/test_pwa/assets/vendor/glightbox/css/glightbox.min.css',
                 '/test_pwa/assets/vendor/swiper/swiper-bundle.min.css',
         
                 // ملفات JS الخاصة بالمكتبات
-                '/test_pwa/assets/vendor/aos/aos.cjs.js',
                 '/test_pwa/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
                 '/test_pwa/assets/vendor/glightbox/js/glightbox.min.js',
                 '/test_pwa/assets/vendor/swiper/swiper-bundle.min.js',
@@ -55,18 +53,7 @@ self.addEventListener('install', (event) => {
                 '/test_pwa/manifest.json',
                 '/test_pwa/service-worker.js',
                 '/test_pwa/forms/contact.php',
-            ];
-
-            return Promise.all(filesToCache.map((url) => {
-                return fetch(url).then((response) => {
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch ${url}`);
-                    }
-                    return cache.put(url, response);
-                }).catch((error) => {
-                    console.error(`Error caching ${url}:`, error);
-                });
-            }));
+            ]);
         })
     );
 });
