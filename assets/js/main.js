@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
+    navigator.serviceWorker.register('/test_pwa/service-worker.js') // تعديل المسار هنا
       .then((registration) => {
         console.log('Service Worker registered with scope: ', registration.scope);
       })
@@ -9,6 +9,7 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+
 
 (function() {
   "use strict";
