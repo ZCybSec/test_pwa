@@ -1,6 +1,6 @@
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open('Antiquities-in-Jordan-cache').then((cache) => {
+        caches.open('Blog - ZaidHijazi').then((cache) => {
             const filesToCache = [
                 // ملفات HTML
                 '/test_pwa/',
